@@ -1,5 +1,5 @@
 export const configurazione = {
-  testo: "Xiao Binzhi",
+  testo: "CD DLT",
   dimensione: 0.8,
   interlinea: 0.7,
   allineamento: "centro",
