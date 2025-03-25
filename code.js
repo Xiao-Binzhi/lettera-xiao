@@ -1,5 +1,5 @@
 export const configurazione = {
-  testo: "CD DLT",
+  testo: "XBZ",
   dimensione: 0.8,
   interlinea: 0.7,
   allineamento: "centro",
@@ -39,6 +39,11 @@ export function disegnaPunto({
   push();
   translate(x, y);
 
+  const diametro = map(sin(indice * 10 + frameCount * 10), -1, 1, 50, 100);
+  ellipse(0, 0, diametro);
+
+  rotate(angolo);
+
   noFill();
   stroke(0);
 
@@ -57,11 +62,7 @@ export function disegnaPunto({
   noStroke();
 
   rectMode(CENTER);
-  rotate(frameCount + indice);
 
-  // Add slight variation based on device tilt
-  scale(1 + volume * 10 + (abs(gamma) / 90) * 0.5);
-  rect(0, 0, unita / 2);
   pop();
 }
 
@@ -81,7 +82,7 @@ export function impostazioni() {
 export function sotto(disegnaTesto) {
   background(255);
 
-  fill("deeppink");
+  fill("#40ffa3");
   disegnaTesto();
 }
 
