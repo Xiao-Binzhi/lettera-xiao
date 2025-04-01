@@ -3,7 +3,7 @@ export const configurazione = {
   dimensione: 0.8,
   interlinea: 0.7,
   allineamento: "centro",
-  percorsoFont: "./assets/InputMonoCondensed-BoldItalic.ttf",
+  percorsoFont: "./assets/times.ttf",
   mostraTestoSotto: true,
   mostraTestoSopra: false,
 };
