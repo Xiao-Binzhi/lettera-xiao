@@ -63,7 +63,7 @@ export function disegnaPunto({
   rectMode(CENTER);
 
   if (indice % 2 === 0) {
-    ellipse(0, 0, diametro);
+    rect(0, 0, 10, 20);
   }
 
   pop();
