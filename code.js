@@ -1,5 +1,5 @@
 export const configurazione = {
-  testo: "XBZ",
+  testo: "X",
   dimensione: 0.8,
   interlinea: 0.7,
   allineamento: "centro",
@@ -39,12 +39,13 @@ export function disegnaPunto({
   push();
   translate(x, y);
 
-  const diametro = map(sin(indice * 10 + frameCount * 10), -1, 1, 50, 100);
+  const diametro = map(sin(indice * 10 + frameCount * 10), -1, 1, 5, 50);
   ellipse(0, 0, diametro);
 
   rotate(angolo);
 
-  noFill();
+  noStroke();
+  colorMode(HSB, 360, 100, 100, 100);
   stroke(0);
 
   // Use orientation data to influence color
@@ -57,11 +58,13 @@ export function disegnaPunto({
   // Map gamma (left-to-right tilt) to brightness (50-100)
   const brightness = map(abs(gamma), 0, 90, 50, 100);
 
-  colorMode(HSB, 360, 100, 100);
-  fill(hue, saturation, brightness);
-  noStroke();
+  fill(hue, saturation, brightness, 60);
 
   rectMode(CENTER);
+
+  if (indice % 2 === 0) {
+    ellipse(0, 0, diametro);
+  }
 
   pop();
 }
@@ -71,7 +74,7 @@ export function disegnaPunto({
 export function caricamentoRisorse() {}
 
 export function impostazioni() {
-  frameRate(30);
+  frameRate(25);
   angleMode(DEGREES);
 }
 
